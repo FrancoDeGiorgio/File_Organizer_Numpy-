@@ -1,0 +1,81 @@
+# ➕ Script CLI: Aggiunta File Singolo e Organizzazione in Cartelle
+
+## 🎯 Obiettivo del notebook
+
+Questo script è stato progettato per **inserire un singolo file** all’interno di una struttura di cartelle organizzata, con un’interfaccia a **riga di comando (CLI)**.  
+Il file viene analizzato in base alla sua **tipologia** e spostato nella **cartella corretta**, con aggiornamento automatico di un file di **log strutturato** (`recap.csv`).
+
+---
+
+## 🧭 Funzionalità principali
+
+- ✅ Analisi del **tipo MIME** del file (audio, immagine, documento)
+- 🗂️ Spostamento del file nella relativa **sottocartella** (`audio/`, `immagini/`, `documenti/`)
+- 🔧 Creazione automatica della cartella se non esiste
+- 📝 Scrittura (o aggiornamento) del file `recap.csv` con:
+  - nome del file
+  - tipo MIME
+  - dimensione (in byte)
+---
+
+## ⚙️ Struttura prevista delle cartelle
+
+Dopo l’esecuzione, la cartella `./files` avrà una struttura come la seguente:
+
+files            
+        - audio
+            - song1.mp3
+            - song2.mp3
+        - documenti
+            - ciao.txt
+            - pippo.odt
+        - imamagini
+            - bw.png
+            - daffodil.jpg
+            - eclipse.png
+            - trump.jpeg    
+        - recap.csv
+
+
+---
+
+## 📤 Esecuzione da terminale
+
+Lo script è progettato per essere eseguito con **argomenti CLI**.  
+Esempio da riga di comando:
+
+```bash
+python addfile.py esempio.jpg -d ./files
+
+---
+## 📦 Librerie utilizzate
+- os, shutil – gestione di file e percorsi
+
+- mimetypes – identificazione del tipo MIME
+
+- csv – scrittura del file recap.csv
+
+- argparse – gestione degli argomenti da riga di comando
+
+- datetime – generazione del timestamp per il log
+
+---
+
+## 🔒 Controlli e Gestione errori
+- Il file viene verificato prima di essere spostato
+
+- Se la directory non esiste, viene creata
+
+- Se recap.csv non esiste, viene generato
+
+In caso di errori (es. file non esistente), viene stampato un messaggio chiaro all’utente
+
+---
+
+## 👨‍💻 Autore:
+
+## ***Franco De Giorgio***  
+
+📅 **Data di completamento:** Luglio 2025
+
+---
